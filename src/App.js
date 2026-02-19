@@ -1,12 +1,10 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./App.css";
-
-import Counter from "./components/Counter";
-import Timer from "./components/Timer";
 
 import Input from "./components/Input";
 import Button from "./components/Button";
-import { useRef } from "react";
+import Counter from "./components/Counter";
+import Timer from "./components/Timer";
 
 function ClearInputDemo() {
   const inputRef = useRef(null);
@@ -38,7 +36,7 @@ export default function App() {
       <header className="app__top">
         <h1 className="app__title">React State App</h1>
         <p className="app__subtitle">
-          useState, useEffect, ref. Все в одном проекте.
+          useState, useEffect, ref. Всё в одном проекте.
         </p>
       </header>
 

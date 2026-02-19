@@ -1,0 +1,58 @@
+.timer__value {
+  font-size: 34px;
+  font-weight: 700;
+  color: #eaeaea;
+  margin: 10px 0 14px;
+}
+
+.timer__actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.timer__btn {
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  color: #eaeaea;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.timer__btn:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.18);
+  transform: translateY(-1px);
+}
+
+.timer__btn:active {
+  transform: translateY(0);
+}
+
+.timer__label {
+  display: grid;
+  gap: 6px;
+  color: rgba(234, 234, 234, 0.75);
+  font-size: 14px;
+  justify-items: center;
+}
+
+.timer__input {
+  width: 220px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #141821;
+  color: #eaeaea;
+  outline: none;
+}
+
+.timer__input:focus {
+  border-color: rgba(97, 218, 251, 0.7);
+  box-shadow: 0 0 0 4px rgba(97, 218, 251, 0.14);
+}

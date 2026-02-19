@@ -1,41 +1,52 @@
-import React, { useRef } from "react";
-import Input from "./components/Input";
-import Button from "./components/Button";
+import React from "react";
 import "./App.css";
 
-/*
- Демонстрация:
-  - useRef хранит ссылку на DOM-элемент input
-  - forwardRef в Input позволяет передать ref внутрь <input />
-  - handleClear очищает поле по клику
- */
+import Counter from "./components/Counter";
+import Timer from "./components/Timer";
 
-export default function App() {
+import Input from "./components/Input";
+import Button from "./components/Button";
+import { useRef } from "react";
+
+function ClearInputDemo() {
   const inputRef = useRef(null);
 
   const handleClear = () => {
-    // inputRef.current появится только после рендера
     if (!inputRef.current) return;
-
     inputRef.current.value = "";
     inputRef.current.focus();
   };
 
   return (
-    <div className="app">
-      <div className="card">
-        <div className="card__header">
-          <h1 className="card__title">Ref + forwardRef demo</h1>
-          <p className="card__subtitle">
-            Введите текст и нажмите “Очистить” — поле станет пустым.
-          </p>
-        </div>
+    <section className="demo-card">
+      <header className="demo-card__header">
+        <h2 className="demo-card__title">Ref + forwardRef</h2>
+        <p className="demo-card__subtitle">Кнопка очищает поле через ref.</p>
+      </header>
 
-        <div className="row">
-          <Input ref={inputRef} placeholder="Введите текст..." />
-          <Button onClick={handleClear} />
-        </div>
+      <div className="demo-row">
+        <Input ref={inputRef} placeholder="Введите текст..." />
+        <Button onClick={handleClear} />
       </div>
+    </section>
+  );
+}
+
+export default function App() {
+  return (
+    <div className="app">
+      <header className="app__top">
+        <h1 className="app__title">React State App</h1>
+        <p className="app__subtitle">
+          useState, useEffect, ref. Все в одном проекте.
+        </p>
+      </header>
+
+      <main className="grid">
+        <ClearInputDemo />
+        <Counter />
+        <Timer />
+      </main>
     </div>
   );
 }

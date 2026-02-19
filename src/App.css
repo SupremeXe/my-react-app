@@ -12,8 +12,6 @@
 
 .app {
   min-height: 100vh;
-  display: grid;
-  place-items: center;
   background: radial-gradient(
       1200px 600px at 30% 20%,
       rgba(76, 175, 80, 0.14),
@@ -30,37 +28,64 @@
     "Helvetica Neue", Arial;
 }
 
-.card {
-  width: min(680px, 100%);
-  background: var(--panel);
-  border: 1px solid var(--panel-border);
-  border-radius: 18px;
-  padding: 22px;
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(10px);
+.app__top {
+  width: min(1000px, 100%);
+  margin: 0 auto 16px;
 }
 
-.card__header {
-  margin-bottom: 16px;
-}
-
-.card__title {
+.app__title {
   margin: 0 0 6px;
   color: var(--text);
-  font-size: 22px;
+  font-size: 26px;
   letter-spacing: 0.2px;
 }
 
-.card__subtitle {
+.app__subtitle {
   margin: 0;
   color: var(--muted);
   font-size: 14px;
   line-height: 1.45;
 }
 
-.row {
+.grid {
+  width: min(1000px, 100%);
+  margin: 0 auto;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.demo-card {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(10px);
+}
+
+.demo-card__header {
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.demo-card__title {
+  margin: 0 0 6px;
+  color: var(--text);
+  font-size: 18px;
+}
+
+.demo-card__subtitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.demo-row {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
   flex-wrap: wrap;
 }

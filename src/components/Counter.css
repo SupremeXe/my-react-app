@@ -1,0 +1,35 @@
+.counter .counter__value {
+  font-size: 48px;
+  font-weight: 700;
+  color: #eaeaea;
+  margin: 10px 0 14px;
+  letter-spacing: 0.5px;
+}
+
+.counter__actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.counter__btn {
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  color: #eaeaea;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.counter__btn:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.18);
+  transform: translateY(-1px);
+}
+
+.counter__btn:active {
+  transform: translateY(0);
+}

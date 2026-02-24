@@ -1,15 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Button.css";
 
 /*
- - Button (UI)
- - Переиспользуемая кнопка
- - Вызов действия приходит через props.onClick
- */
+ - Button
+ - Меняет цвет по клику
+ - Передаёт событие наружу
+*/
+
 export default function Button({ onClick }) {
+  const [isClicked, setIsClicked] = useState(false);
+
+  const handleClick = () => {
+    setIsClicked((prev) => !prev);
+    if (onClick) onClick();
+  };
+
   return (
-    <button className="custom-button" onClick={onClick} type="button">
-      Очистить
+    <button
+      type="button"
+      onClick={handleClick}
+      className={`custom-button ${isClicked ? "clicked" : ""}`}
+    >
+      Изменить цвет
     </button>
   );
 }

@@ -18,3 +18,11 @@
 .custom-button:active {
   transform: translateY(0);
 }
+
+.custom-button.clicked {
+  background: #2196f3;
+}
+
+.custom-button.clicked:hover {
+  background: #1976d2;
+}

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import "./App.css";
 
 import Input from "./components/Input";
@@ -30,6 +30,36 @@ function ClearInputDemo() {
   );
 }
 
+/*
+  Новая демонстрация. Фон меняется на каждый клик
+*/
+function BackgroundToggleDemo() {
+  const [clickCount, setClickCount] = useState(0);
+
+  const handleButtonClick = () => {
+    setClickCount((prev) => prev + 1);
+  };
+
+  return (
+    <section
+      className="demo-card"
+      style={{
+        backgroundColor: clickCount % 2 === 0 ? "#1f2937" : "#334155",
+        transition: "background-color 0.3s ease",
+      }}
+    >
+      <header className="demo-card__header">
+        <h2 className="demo-card__title">Изменение фона</h2>
+        <p className="demo-card__subtitle">Фон меняется на каждый клик.</p>
+      </header>
+
+      <div className="demo-row">
+        <Button onClick={handleButtonClick} />
+      </div>
+    </section>
+  );
+}
+
 export default function App() {
   return (
     <div className="app">
@@ -42,6 +72,7 @@ export default function App() {
 
       <main className="grid">
         <ClearInputDemo />
+        <BackgroundToggleDemo />
         <Counter />
         <Timer />
       </main>
